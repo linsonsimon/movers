@@ -1,0 +1,145 @@
+.req-comp-hero {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+hr {
+  margin: 1rem 0;
+}
+
+.from-to-req {
+  display: flex;
+}
+
+.req-ft {
+  /* display: flex; */
+  flex: 4;
+  padding: 0 0.5rem;
+}
+
+.req-request {
+  padding: 0 0.5rem;
+  flex: 3;
+}
+.arrow-div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-btn {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: var(--accent);
+}
+
+.req-details {
+  display: flex;
+  padding: 0 1rem;
+}
+
+.req-details-info {
+  flex: 8;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 0.5rem;
+}
+
+.req-details-btns {
+  flex: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.req-details-info > p,
+.flexible {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.req-details-info > p > span {
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+.req-details-info > p > .edit {
+  color: gray;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.req-details-btns > .details-btn,
+.req-details-btns > .quotes-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.req-details-btns > .details-btn {
+  background-color: transparent;
+  border: solid 1px var(--accent);
+  color: var(--accent);
+  margin: 0 1rem;
+}
+
+.req-details-btns > .quotes-btn {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+}
+
+.disclaimer {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  color: gray;
+  gap: 5px;
+  padding: 0 1rem;
+  font-size: 0.9rem;
+}
+
+.disclaimer > span {
+  font-weight: 600;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--accent);
+}
+
+@media (max-width: 1260px) {
+  .req-details {
+    flex-direction: column;
+  }
+
+  .req-details-info {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .req-details-btns {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .from-to-req {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 0.5rem;
+  }
+  .disclaimer {
+    flex-direction: column;
+  }
+}

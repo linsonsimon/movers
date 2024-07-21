@@ -1,0 +1,62 @@
+.sidebar {
+  width: 15vw;
+}
+
+.sidebar-hero {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  width: 100%;
+  padding: 1rem 1rem 1rem 1rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar-hero > p {
+  margin: 0;
+}
+
+.sidebar-hero > p > a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.sidebar-hero > p > a > span {
+  color: rgb(72, 72, 72);
+  font-size: 1.2rem;
+}
+
+.active {
+  border-left: solid 2px var(--accent);
+  height: 100%;
+  padding-left: 0.4rem;
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    width: 20vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    width: 25vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .sidebar {
+    width: 15vw;
+  }
+  .sidebar-hero > p > a > p {
+    display: none;
+  }
+}

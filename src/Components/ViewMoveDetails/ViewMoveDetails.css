@@ -1,0 +1,85 @@
+.accordian-hero {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-10px); /* Initially slightly shifted up */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transition effect */
+  padding: 1rem 0.5rem 0 0.5rem;
+}
+
+.accordian-hero.active {
+  border-left: none;
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset position */
+}
+
+.inv-details,
+.house-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.inv-details-head,
+.house-details-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.inv-details > .inv-details-head > button,
+.house-details > .house-details-head > button {
+  background-color: black;
+  color: white;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.house-details {
+  margin-top: 1rem;
+}
+
+.existing-house-info,
+.new-house-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.existing-house-details > h3,
+.new-house-details > h3 {
+  /* color: var(); */
+  margin-bottom: 1rem;
+}
+
+.existing-house-details {
+  margin-top: 1rem;
+  border-bottom: solid 1px lightgray;
+  padding-bottom: 2rem;
+}
+
+.new-house-details {
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 700px) {
+  .existing-house-info,
+  .new-house-info {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .existing-house-info,
+  .new-house-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 350px) {
+  .existing-house-info,
+  .new-house-info {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

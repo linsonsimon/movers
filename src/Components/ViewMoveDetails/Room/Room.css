@@ -1,0 +1,49 @@
+.room-hero {
+  margin: 1rem 0;
+}
+
+.room-hero-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: lightgray;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.head-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.head-details > h4 {
+  color: var(--accent);
+}
+
+.head-details > p {
+  background-color: var(--accent);
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 50%;
+  font-weight: 600;
+  padding: 0.1rem 0.3rem;
+}
+
+.br-rad {
+  border-radius: 5px;
+}
+
+.br-rad-top {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.room-hero-head > button {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
