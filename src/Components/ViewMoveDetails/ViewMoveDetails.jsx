@@ -109,6 +109,7 @@ const ViewMoveDetails = ({ data }) => {
                 </>
               }
               data={value.data}
+              key={key}
             />
           ))}
         </div>

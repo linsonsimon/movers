@@ -33,13 +33,14 @@ const RoomItems = ({ data }) => {
         {Object.entries(data).map(
           ([key, value]) =>
             value.count > 0 && (
-              <div className="furnitures">
+              <div className="furnitures" key={key}>
                 <h3>{key}</h3>
                 {value.items.map((item) => (
                   <DetailsHolder
                     title={item?.displayName}
                     count={item?.qty}
                     memo={item.type.map((type) => type.selected && type.option)}
+                    key={item.id}
                   />
                 ))}
               </div>
