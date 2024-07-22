@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
 import "./ViewMoveDetails.css";
 import Room from "./Room/Room";
+
+import {
+  filterElectrials,
+  filterFurniture,
+  filterFragile,
+} from "../../misc/filterData";
+
 const ViewMoveDetails = ({ data }) => {
   const [isActive, setIsActive] = useState(false);
   const [stuff, setStuff] = useState({
@@ -10,9 +17,9 @@ const ViewMoveDetails = ({ data }) => {
     b: { title: "BathRoom", data: {} },
   });
   useEffect(() => {
-    let furniture = filterFurniture();
-    let electricals = filterElectrials();
-    let fragile = filterFragile();
+    let furniture = filterFurniture(data);
+    let electricals = filterElectrials(data);
+    let fragile = filterFragile(data);
 
     let a = {
       data: {
@@ -34,52 +41,6 @@ const ViewMoveDetails = ({ data }) => {
       lr: { ...prev.lr, data: a.data, totalCount: totalCount },
     }));
   }, []);
-
-  const filterFurniture = () => {
-    let a = data.items.inventory[0].category
-      .filter(
-        (furniture) =>
-          furniture.id !== "1_4" &&
-          furniture.id !== "1_5" &&
-          furniture.id !== "1_6"
-      )
-      .map((furniture) => furniture.items.filter((item) => item.qty != 0))
-      .filter((filteredItems) => filteredItems.length > 0) // Ensure we only flatten non-empty arrays
-      .flat();
-
-    let count = a.reduce((acc, item) => acc + item.qty, 0);
-    let temp = {
-      items: a,
-      count: count,
-    };
-    return temp;
-  };
-
-  const filterElectrials = () => {
-    let a = data.items.inventory[1].category
-      .map((electricals) => electricals.items.filter((item) => item.qty != 0))
-      .filter((filteredItems) => filteredItems.length > 0) // Ensure we only flatten non-empty arrays
-      .flat();
-
-    let count = a.reduce((acc, item) => acc + item.qty, 0);
-    let temp = {
-      items: a,
-      count: count,
-    };
-
-    return temp;
-  };
-  const filterFragile = () => {
-    let a = data.items.inventory[3].category[2].items.filter(
-      (item) => item.qty != 0
-    );
-    let count = a.reduce((acc, item) => acc + item.qty, 0);
-    let temp = {
-      items: a,
-      count: count,
-    };
-    return temp;
-  };
 
   useEffect(() => {
     setIsActive(true);
